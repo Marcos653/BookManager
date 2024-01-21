@@ -1,4 +1,4 @@
-const API_BASE_URL = "http://127.0.0.1:8000/api/books/";
+const API_BASE_URL = "https://bookmanager-api.onrender.com/api/books/";
 
 export const fetchBooks = async (params = {}) => {
   const { page = 1, search = "", size = 5 } = params;
