@@ -11,7 +11,7 @@ export function App() {
   const [searchTerm, setSearchTerm] = useState('');
   const [currentPage, setCurrentPage] = useState(1);
   const [totalPages, setTotalPages] = useState(0);
-  const [reloadBooksFlag, setReloadBooksFlag] = useState(false);
+  const [reloadBooksFlag, setReloadBooksFlag] = useState(0);
 
   const filteredBooks = books.filter(book =>
     book.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
@@ -39,7 +39,7 @@ export function App() {
   const addBook = async () => {
     try {
       await createBook(newBook);
-      setReloadBooksFlag(prev => !prev);
+      setReloadBooksFlag(prev => prev + 1);
       setNewBook({ title: '', author: '', bookImageUrl: '' });
     } catch (error) {
       console.error("Failed to add book:", error);
@@ -49,7 +49,7 @@ export function App() {
 const handleDeleteBook = async (id) => {
   try {
     await deleteBook(id);
-    setReloadBooksFlag(prev => !prev);
+    setReloadBooksFlag(prev => prev + 1);
   } catch (error) {
     console.error("Failed to delete book:", error);
   }
@@ -58,7 +58,7 @@ const handleDeleteBook = async (id) => {
   const handleUpdateBook = async (updatedBook) => {
     try {
       await updateBook(updatedBook.id, updatedBook)
-      setReloadBooksFlag(prev => !prev);
+      setReloadBooksFlag(prev => prev + 1);
     } catch (error) {
       console.error("Failed to update book:", error);
     }

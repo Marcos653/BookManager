@@ -37,11 +37,9 @@ export const deleteBook = async (id) => {
     method: "DELETE",
   });
 
-  if (!response.noContent) {
+  if (response.status !== 204) {
     throw new Error("Could not delete book");
   }
-
-  return response.json();
 };
 
 export const updateBook = async (id, bookData) => {
