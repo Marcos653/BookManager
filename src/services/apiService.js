@@ -1,7 +1,15 @@
 const API_BASE_URL = "http://127.0.0.1:8000/api/books/";
 
-export const fetchBooks = async () => {
-  const response = await fetch(API_BASE_URL);
+export const fetchBooks = async (params = {}) => {
+  const { page = 1, search = "", size = 5 } = params;
+
+  const queryParams = new URLSearchParams();
+  queryParams.append("page", page);
+  queryParams.append("search", search);
+
+  const url = `${API_BASE_URL}?${queryParams.toString()}`;
+
+  const response = await fetch(url);
 
   if (!response.ok) {
     throw new Error("Could not fetch books");
