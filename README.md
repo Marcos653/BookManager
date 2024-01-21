@@ -1,8 +1,36 @@
-# React + Vite
+# BookManager Front-end
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Este repositório contém o código fonte do front-end para a aplicação BookManager, uma aplicação web para gerenciamento de uma biblioteca pessoal.
 
-Currently, two official plugins are available:
+## Tecnologias Utilizadas
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- React.js
+- JavaScript
+- Material-UI
+
+## Funcionalidades
+
+- Adicionar, visualizar, atualizar e deletar livros.
+- Pesquisa e paginação de livros.
+
+## Instalação e Execução
+
+Para rodar o projeto localmente, siga estes passos:
+
+1. Clone o repositório:
+   ```bash
+   git clone https://github.com/Marcos653/BookManagerFront.git
+
+2. Navegue até a pasta do projeto:
+
+  ```cd BookManagerFront```
+
+3. Instale as dependências:
+
+```npm install```
+
+4. Inicie o servidor de desenvolvimento:
+
+```npm run dev```
+
+O aplicativo será aberto no navegador no endereço: http://localhost:3000.
